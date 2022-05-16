@@ -1,5 +1,6 @@
 $(document).ready(function () {
     let btn = $('#btn_post_comm');
+    let btn_del = $('#btn_del_comm')
     let post_id = $('#secret').val();
     let count = parseInt($('#badge').text());
     btn.on('click', function () {
@@ -36,4 +37,7 @@ $(document).ready(function () {
         $('#badge').text(count++);
         $('#comment_txt').val("");
     })
+    btn_del.on('click', function () {
+
+    });
 });

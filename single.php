@@ -43,7 +43,8 @@ $comments = get_comments_per_post($post_id);
                 <div>
                     <p class="mb-1"><?php echo $comment['content'] ?></p>
                     <?php if (get_author_name($_SESSION['id']) == 'Admin') {
-                        echo '<div class="text-end"><a href="" class="text-primary">Effacer commentaire</a></div>';
+                        echo '<input type="hidden" id="secret_comm_' . $i . '" value="' . $comment['id'] . '">';
+                        echo '<div class="text-end"><a id="btn_del_comm" href="" class="text-primary">Effacer commentaire</a></div>';
                     }
                     ?>
                 </div>

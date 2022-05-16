@@ -1,7 +1,7 @@
 <?php
 require './functions.php';
 if (isset($_POST['title'], $_POST['content'], $_POST['category']) && !empty($_POST['title']) && !empty($_POST['content'])) {
-    if (isset($_SESSION['id']) && !empty($_SESSION['id']) && post_is_from_this_user($_SESSION['id'], $_GET['post_id'])) {
+    if (isset($_SESSION['id']) && !empty($_SESSION['id']) && (post_is_from_this_user($_SESSION['id'], $_GET['post_id'])) || get_author_name($_SESSION['id']) == 'Admin') {
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
         $category_id = htmlspecialchars($_POST['category']);
@@ -38,7 +38,7 @@ if (isset($_POST['title'], $_POST['content'], $_POST['category']) && !empty($_PO
         die();
     }
 }
-if (isset($_GET['post_id'], $_SESSION['id']) && !empty($_GET['post_id']) && !empty($_SESSION['id']) && post_exists(htmlspecialchars($_GET['post_id'])) && post_is_from_this_user(htmlspecialchars($_SESSION['id']), htmlspecialchars($_GET['post_id']))) {
+if (isset($_GET['post_id'], $_SESSION['id']) && !empty($_GET['post_id']) && !empty($_SESSION['id']) && post_exists(htmlspecialchars($_GET['post_id'])) && (post_is_from_this_user(htmlspecialchars($_SESSION['id']), htmlspecialchars($_GET['post_id'])) || get_author_name($_SESSION['id']) == 'Admin')) {
     $post_id = htmlspecialchars($_GET['post_id']);
     $post = get_post($post_id);
 } else {
