@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(43, 43, 43);
+}
+
+h1 {
+    color: rgb(194, 55, 125);
+}
+
+h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    background-color: rgb(226, 226, 226);
+    padding-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(194, 55, 125);
+}
+
+a:hover {
+    color: rgb(128, 80, 104);
+    text-decoration: underline;
+}
+
+.still_clickable {
+    z-index: 2;
+    position: relative;
+}
+
+form {
+    text-align: center;
+}
+
+option {
+    width: 50%;
+}
+
+.create_post {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 2em;
+}
+
+.content {
+    margin-top: 2em;
+}
+
+#delete_input {
+    display: none;
+}
+
+.darker-bg {
+    background-color: rgb(216, 216, 216);
+}
+
+.darker-bg:hover {
+    background-color: rgb(207, 207, 207);
+}
